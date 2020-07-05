@@ -100,7 +100,7 @@ select {
 }
 
 #ruler_x canvas:first-child {
-  margin-left: -16px;
+  margin-left: -32px;
 }
 
 #ruler_x canvas {
@@ -108,7 +108,7 @@ select {
 }
 
 #ruler_y canvas {
-  margin-top: -16px;
+  margin-top: -32px;
 }
 
 #ruler_x > div,
