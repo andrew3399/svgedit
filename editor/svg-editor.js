@@ -18,6 +18,10 @@
 import './touch.js';
 import {NS} from './namespaces.js';
 import {isWebkit, isChrome, isGecko, isIE, isMac, isTouch} from './browser.js';
+
+// Until we split this into smaller files, this helps distinguish utilities
+//   from local methods
+// eslint-disable-next-line import/no-namespace
 import * as Utils from './utilities.js';
 import {getTypeMap, convertUnit, isValidUnit} from './units.js';
 import {
@@ -44,6 +48,8 @@ import {
   init as localeInit
 } from './locale/locale.js';
 import loadStylesheets from './external/load-stylesheets/index-es.js';
+
+const {$q} = Utils;
 
 const editor = {};
 
@@ -5765,7 +5771,7 @@ editor.init = function () {
           // Bind function to button
           let btn;
           if (opts.sel) {
-            btn = document.querySelector(opts.sel);
+            btn = $q(opts.sel);
             if (btn === null) { return true; } // Skip if markup does not exist
             if (opts.evt) {
               // `touch.js` changes `touchstart` to `mousedown`,

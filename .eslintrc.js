@@ -137,6 +137,7 @@ module.exports = {
           'document.evaluate',
           'document.head',
           'document.importNode',
+          'document.querySelector',
           'document.querySelectorAll',
           'DOMParser',
           'Error',
@@ -173,6 +174,9 @@ module.exports = {
         ]
       },
       rules: {
+        // Should probably add this rule to ash-nazg as facilitates tree-shaking
+        'import/no-namespace': ['error'],
+
         'node/no-unsupported-features/node-builtins': 'off'
       }
     },
